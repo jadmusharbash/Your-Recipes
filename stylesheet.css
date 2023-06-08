@@ -114,3 +114,14 @@ body {
         margin-top: 20px;
       }
       
+      .recipe {
+        cursor: pointer;
+      }
+      
+      .recipe img {
+        display: none;
+      }
+      
+      .recipe p {
+        display: none;
+      }

@@ -5,6 +5,7 @@
   <h1>Your Recipes</h1>
   <title>Your Recipes</title>
   <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
 <style>
     body {
@@ -75,6 +76,24 @@
   font-size: 17px;
   z-index: 2;
 }
+
+.recipe { 
+      cursor: pointer;
+      width: 40%;
+    }
+    
+    .recipe img {
+      display: none;
+    }
+    
+    .recipe p {
+      display: none;
+    }
+.container1 {
+
+    position:relative;
+    left:40%;
+}
 </style>
 
 <script async src="https://cse.google.com/cse.js?cx=b6c4eb404c06249b1">
@@ -89,10 +108,45 @@
     <a href="contact.html">Contact</a>
     <a href="recipes.html">Recipes</a>
   </div> 
+  <img src="download (3).jpg" style="position: relative; top: 10%; right: -40%;  ">
 
-  <body>
+  <div class="container1">
+    <h1>Recipes!</h1>
+    
+    <div id="recipe1" class="recipe" onclick="toggleRecipe(1)">
+      <h3>Cajun Chicken Pasta</h3>
+      <img src="Cajun-chicken-one-pot-3f68774.jpg"> <!--From BBC-->
+      <p>"Sauté seasoned chicken breast with Cajun spices, then toss it with al dente pasta in a creamy tomato sauce for a flavorful Chicken Cajun Pasta that's sure to impress!"</p> 
+    </div>
+    
+    <div id="recipe2" class="recipe" onclick="toggleRecipe(2)">
+      <h3>Smoothie Bowl</h3>
+      <img src="Smoothie-bowl-16df176.jpg"><!--From BBC-->
+      <p>"Blend frozen berries, banana, and your choice of milk until smooth, then top with granola, sliced fruits, and a drizzle of honey to create a refreshing and nutritious Smoothie Bowl that will energize your day."</p>
+    </div>
+    
+    <div id="recipe3" class="recipe" onclick="toggleRecipe(3)">
+      <h3>Garlic Mushrooms</h3>
+      <img src="Garlic-mushrooms-320ddd6.jpg"><!--From BBC-->
+      <p>"In a skillet, sauté sliced mushrooms with minced garlic and butter until golden brown and aromatic, then finish with a sprinkle of fresh parsley for a delectable side dish of Garlic Mushrooms that pairs perfectly with grilled meats or as a topping for crusty bread."</p>
+    </div>
+  </div>
 
-
+  <script>
+    function toggleRecipe(recipeId) {
+      var recipe = document.getElementById("recipe" + recipeId); //recipe
+      var img = recipe.getElementsByTagName("img")[0]; //image
+      var desc = recipe.getElementsByTagName("p")[0]; //text
+      
+      if (img.style.display === "none") { //if else for accordion
+        img.style.display = "block";
+        desc.style.display = "block";
+      } else {
+        img.style.display = "none";
+        desc.style.display = "none";
+      }
+    }
+  </script>
 
 
 
